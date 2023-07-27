@@ -10,4 +10,4 @@ This is an example solution to illustrate how to create an NUnit unit test proje
  <img width="521" src="https://github.com/TomSoderling/NUnitTestableMauiApp/assets/18268845/b2a9ad9d-b89d-40b7-a728-21b03d0bccb1">
 
 
- 2. Since the unit test project must target the "plain" net7.0 TFM, so must the MAUI app that is referenced by the unit test project. Some NuGet packages you add to your app project may not include the net7.0 TFM so that will cause NuGet restore or NuGet package manager issues. I haven't found a good way to deal with this yet - outside of getting the library source, adding that TFM, and rebuilding the library.
+ 2. Since the unit test project must target the "plain" net7.0 TFM, so must the MAUI app that is referenced by the unit test project. Some NuGet packages you add to your app project may not include the net7.0 TFM, so that will cause some build errors if you use a class from that library in your MAUI app code. I haven't found a good way to deal with this yet - outside of getting the library source, adding that TFM, and rebuilding the library.
