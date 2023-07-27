@@ -1,24 +1,7 @@
 # Introduction 
-This is a sample unit test project to illustrate how to write NUnit based unit tests in C# for mobile apps using the .NET MAUI framework.
-The purpose of this sample is to convey best practices for writing and structuring unit tests. The sample contains a collection of reference unit tests for testing common mobile app scenarios, or scenarios that can be tricky to test.
+This is a sample unit test project to illustrate how to write NUnit tests to test .NET MAUI apps.
 
-In this sample, fake objects are created with the FakeItEasy library. Docs: https://fakeiteasy.github.io  
+# Known Issues
+ 1. In order to get the MAUI app to run and have avail. simulators/devices to run against in VS, uncomment the noted TargetFrameworks line in the MauiAppToTest.csproj file and comment out the existing TargetFrameworks line.
 
-
-# Getting Started
-- Clone the repo and explore!
-- Each test can be debugged in place with the VS debugger so you can step though the reference unit tests and see how they work.  
-
-
-# Unit Test Naming Convention
-Naming each test clearly and consistently helps explain the test to developers who aren't familiar with it. We found that clearly spelling out these 3 pieces of information also helps developers understand what exactly they're trying to test when writing the test.
-The naming convention is made up of 3 parts: `UnitUnderTest_StateUnderTest_ExpectedResult`
-  - `UnitUnderTest` : what method, member, or code block is being tested.
-  - `StateUnderTest` : the condition or case being tested.
-  - `ExpectedResult` : what the outcome of the test should be. Should match what Assert statements you have.
-  
-# Unit Test Outline
-In the test method block, use the AAA pattern to organize your test in a clear and consistent way
-- `Arrange` : set up variables, constants, etc. for the test. Expected results. Instance of Model, ViewModel, or Service to be tested
-- `Act` : perform the test and save result to a variable. Should be simple; shouldn't need to do a lot here if you've used the Arrange section correctly.
-- `Assert` : Assert statements to check that the actual result matches the expected results.
+ 2. Since the unit test project must target the "plain" net7.0 TFM, so must the MAUI app that is referenced by the unit test project. Some NuGet packages you add to your app project may not include the net7.0 TFM so that will cause NuGet restore or NuGet package manager issues. I haven't found a good way to deal with this yet - outside of getting the library source, adding that TFM, and rebuilding the library.
