@@ -1,5 +1,6 @@
 # Introduction 
-This is an example solution to illustrate how to create an NUnit unit test project that tests a .NET MAUI app.
+This is an example solution to illustrate how to create an NUnit unit test project that tests a .NET MAUI app.  
+It also includes a few examples and suggestions on how to help make your tests better.
 
 # Known Issues
  1. In order to get the MAUI app to run and have avail. simulators/devices to run against in VS, uncomment the noted TargetFrameworks line in the MauiAppToTest.csproj file and comment out the existing TargetFrameworks line.
